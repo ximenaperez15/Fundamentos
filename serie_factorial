@@ -1,0 +1,35 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "math.h"
+using namespace std;
+
+float serie (float s, float x, float N);
+
+void main(){
+
+float x, s, N;
+cout<<"ingrese el valor de x:";
+cin>>x;
+cout<<"ingrese el valor de N:";
+cin>>N;
+s=serie(x,N);
+cout<<"el valor de la sumatoria es:"<<s<<endl;
+getch ();
+}
+
+float serie (float x, int N)
+{
+int I,i,factorial=1;
+float s,p;
+s=(3.1416/5);
+for (I=2;I<=N;I=I+2){
+	factorial=1;
+	for(i=2;i<=I;i++){
+		factorial=factorial*i;
+	}
+	p=pow(x,I)/factorial;
+	p=p*(-1);
+	s=s+p;
+getch();
+}
