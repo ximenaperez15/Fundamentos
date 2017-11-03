@@ -1,0 +1,44 @@
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+float serie (float x,float n);
+
+void main()
+{
+	float x, n, r;
+	cout<<"ingrese la base:";
+	cin>>x;
+	cout<<"ingrese el exponente:";
+	cin>>n;
+	r= serie (x,n);
+	cout<<"la suma de la serie es:";
+	cout<<r;
+	getch();
+}
+
+float serie (float x, float n)
+{
+ int de, nu, t, p;
+ float T, s,Te;
+ de=1;
+ nu=1;
+ t= 1;
+ T=1;
+ p= -1;
+ s=3.141516;
+ while (t<=n)
+ {
+   nu=nu*x;
+   de=de*(t+1);
+   Te=(nu/de)*T;
+   s=s+(T*p);
+   p=-p;
+ }
+   t=t+1;
+
+ return (s);
+}
