@@ -1,0 +1,28 @@
+#include "stdafx.h"
+#include<iostream>
+#include "conio.h"
+using namespace std;
+
+
+void main()
+{
+    float d,total;
+    float distancia(float d);
+    cout<<"ingrese la distancia"<<endl;
+    cin>>d;
+    total= distancia(d);
+    cout<<"el precio es:"<<total<<endl;
+    getch();
+   
+
+}
+
+float distancia(float d){
+    float precio,km;
+    km=0.57;
+    if(d>500)
+        precio=km*(d-(d*0.25));
+    else
+        precio=km*d;
+    return precio;
+}
