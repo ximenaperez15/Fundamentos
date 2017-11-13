@@ -1,0 +1,79 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void imp_hola ();
+int valor_tres (int w, int e, int r);
+float valor_absolut (float n);
+
+void main () {
+	int n, p, a, b, c, j, h;
+	float z;
+	do {
+	cout << "1. Imprimir Hola" << endl;
+	cout << "2. Sacar el menor de tres valores" << endl;
+	cout << "3. Obtener valor absoluto" << endl;
+	cout << "4. FIN" << endl;
+	cout << "Ingrese la opcion deseada: ";
+	cin >> n;
+	switch(n) {
+	case 1:
+			imp_hola ();
+			break;
+	case 2:
+			cout << "Ingrese Primer valor: " << endl;
+			cin >> a;
+			cout << "Ingrese Segundo valor: " << endl;
+			cin >> b;
+			cout << "Ingrese Tercer valor: " << endl;
+			cin >> c;
+			j = valor_tres (a,b,c);
+			cout << "el menor numero es: " << j << endl;
+			break;
+	case 3:
+			cout << "Ingrese el numero para valor absoluto: " << endl;
+			cin >> z;
+			h = valor_absolut (z);
+			cout << "El valor absoluto es: " << h << endl;
+			break;
+	case 4:
+			cout << "Hasta luego" <<endl;
+			break;
+	default:
+		cout << "Respuesta Invalida, Ingrese nuevamente: "; 
+	}
+
+	} while (n != 4);
+	getch ();
+}
+
+
+
+
+
+void imp_hola () {
+	cout << "Hola " << endl;
+}
+
+
+int valor_tres (int w, int e, int r) {
+	if (( w < e) && (w<r))
+		return w;
+	else
+		if ((e<w) && (e<r))
+			return e;
+		else
+			return r;
+
+
+}
+
+
+float valor_absolut (float n) {
+	if (n < 0)
+		return -n;
+	else 
+		return n;
+}
