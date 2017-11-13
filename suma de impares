@@ -1,0 +1,25 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+void main(){
+	int N,S,I ;
+	char resp;
+	do{
+
+		cout<<"Ingrese numero Entero: "<<endl;
+		cin>>N;
+		S=0;
+		for(I=1;I<=N;I=I+2){
+			S=S+I;
+			cout<<"+ "<<I;
+		}
+		cout<<endl;
+		cout<<"La Suma total es: "<<S<<endl;
+		cout <<"Si desea finalizar presiona s";
+		cin>> resp;
+	}
+	while (resp!='s');
+	getch();
+}
