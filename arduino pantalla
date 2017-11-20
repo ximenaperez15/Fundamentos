@@ -1,0 +1,27 @@
+
+// include the library code:
+#include <LiquidCrystal.h>
+
+// initialize the library with the numbers of the interface pins
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
+
+int contraste=9;
+
+void setup() {
+  // set up the LCD's number of columns and rows:
+  lcd.begin(16, 2);
+  // Print a message to the LCD.
+  lcd.print("hello, world!");
+}
+
+void loop() {
+
+  analogWrite(contraste,50);
+  // Turn off the blinking cursor:
+  lcd.noBlink();
+  delay(3000);
+  // Turn on the blinking cursor:
+  lcd.blink();
+  delay(3000);
+}
+
