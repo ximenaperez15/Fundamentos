@@ -1,0 +1,39 @@
+#define trigPin 11
+#define echoPin 10
+
+int buzzerPin = 7;
+int numTones = 10;
+
+void setup()
+{
+ Serial.begin(9600); 
+ pinMode(trigPin,OUTPUT);
+ pinMode(echoPin,INPUT);
+ pinMode(buzzerPin,OUTPUT);
+ 
+}
+
+void loop()
+{
+long duracion,distancia;
+digitalWrite(trigPin,LOW);
+delayMicroseconds (2);
+digitalWrite (trigPin, HIGH);
+delayMicroseconds (10);
+digitalWrite (trigPin, LOW);
+duracion = pulseIn (echoPin, HIGH);
+distancia = duracion/2/29.1;
+Serial.println (String(distancia)+"cm.");
+
+if (distancia<10)
+{ 
+  tone(buzzerPin,400);
+  delay (700);
+}
+else
+{
+  noTone (buzzerPin);
+
+}
+  
+}
